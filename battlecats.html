@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Battle Cats</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+    <p>P1 PICK YOUR CHARACTER</p>
+
+    <button id="maucho_cat">maucho_cat</button>
+
+    <button id="wall_cat">wall_cat</button>
+
+    <button id="axe_cat">axe_cat</button>
+    
+
+    <p>P2 PICK YOUR CHARACTER</p>
+
+    
+    <button id="doge_select">Doge_Select</button>
+
+    <button id="seal_select">Seal_Select</button>
+    
+    <p>Start?</p>
+
+    <button id="start">Start!</button>
+
+
+    <script>
+        //VAR ESTABLISHMENTS 
+
+
+        //Button PRESS Var Establishments [BP]
+
+        let maucho_catbp = false;
+        let wall_catbp = false;
+        let axe_catbp = false;
+        let dogebp = false;
+        let sealbp = false;
+        
+
+
+        //P1 CHARACTER CHOICES
+        //Setting up Cat OBJS
+        let maucho_cat = {
+            health: 13,
+            power: 7,
+        };
+
+        let wall_cat = {
+            health: 20,
+            power: 5,
+        };
+
+        let axe_cat = {
+            health: 7,
+            power: 13,
+            skill: "Kills Reds"
+        };
+
+
+
+        //P2 CHARACTER CHOICES   
+
+        //Setting up "Other" Animal Choices; p2 enemies;
+
+        let doge = {
+            health: 10,
+            power: 10,
+        };
+
+        let seal = {
+            health: 10,
+            power: 10,
+            weakness: "Red Killing"
+        };
+
+
+        let p1Choice;
+
+        //Selecting Maucho Cat        
+
+        $("#maucho_cat").on("click", () => {
+
+                    alert("P1 Cat is Maucho Cat!");
+                    //ALERTS CHOICE OF P1
+
+                    const maucho_catbp = true;
+            
+                    if (maucho_catbp == true) {
+                        p1Choice = {
+                            //establishes cat properties   
+                            health: 13,
+                            power: 7,
+                            name: "Maucho Cat"
+                        };
+                        console.log(p1Choice)
+                    }
+                });
+
+                //Selecting Wall Cat   
+
+                $("#wall_cat").on("click", () => {
+
+                        alert("P1 Cat i-xs Wall Cat!");
+                        //ALERTS CHOICE OF P1
+
+                        const wall_catbp = true
+                        if (wall_catbp == true) {
+                            p1Choice = {
+
+                                //establishes cat properties  
+
+                                health: 20,
+                                power: 5,
+                                name: "Wall Cat"
+
+
+
+                            };
+                            console.log(p1Choice)
+                        }
+                    });
+
+                    //Selecting Axe Cat   
+
+                    $("#axe_cat").on("click", () => {
+
+                            alert("P1 Cat i-xs Axe Cat!");
+                            //ALERTS CHOICE OF P1
+
+                            const axe_catbp = true
+                            if (axe_catbp == true) {
+                               p1Choice = {
+
+                                    //establishes cat properties  
+
+                                    health: 7,
+                                    power: 13,
+                                    name: "Axe Cat",
+                                    skill: "Kills Red"
+
+
+
+                                };
+                                console.log(p1Choice)
+                            }
+                        });
+
+                        //Selecting Doge
+
+                let p2Choice;
+                        $("#doge_select").on("click", () => {
+
+                                alert("P2 Character is Doge!");
+                                //ALERTS CHOICE OF P2
+
+                                const dogebp = true
+                                if (dogebp == true) {
+                                   p2Choice = {
+
+                                        //establishes cat properties  
+
+                                        health: 10,
+                                        power: 10,
+                                        name: "Doge",
+                                        skill: "Kills Red",
+                                    };
+                                    console.log(p2Choice);
+                                }
+                            });
+
+                            //Selecting Seal
+
+                            $("#seal_select").on("click", () => {
+
+                                    alert("P2 Character is Seal!");
+                                    //ALERTS CHOICE OF P2
+
+                                    const sealbp = true
+                                    if (sealbp == true) {
+                                       p2Choice = {
+
+                                            //establishes cat properties  
+
+                                            health: 15,
+                                            power: 10,
+                                            name: "Sea;",
+                                            weakness: "Red Killing"
+
+                                        };   
+                                    }
+                                    console.log(p2Choice);
+                                });
+
+                                //Main game func
+
+                                $("#start").on("click", () => {
+                                    if (p1Choice.power % p1Choice.health > p2Choice.power % p2Choice.health) {
+
+                                        alert("P1 Won the game gg.");
+                                    }
+
+                                        else {
+                                            alert("P2 won the game lol tbh :dab: ree.");
+
+                                        }
+
+                                    })
+
+                                    //Special Occasions
+
+                                    $("#start").on("click", () => {
+
+                                        if (p1Choice.skill == "Kills `Red" && p2Choice.weakness == "Red Killing") {
+                                            alert("Victory!");
+                                        } else {
+                                            alert("Defeat!");
+                                        }
+                                });
+
+                
+
+    </script>
+</body>
+
+</html>
